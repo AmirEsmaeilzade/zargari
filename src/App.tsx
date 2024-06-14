@@ -22,7 +22,10 @@ function App() {
       else if (input[i] === 'ی') {
         result += 'زی';
       }
-      else if (i !== input.length - 1 && input[i] !== ' ' && input[i + 1] !== ' ' && input[i + 1] !== 'ا'  &&input[i + 1] !== 'ی') {
+      else if (input[i] === 'و') {
+        result += 'زو';
+      }
+      else if (i !== input.length - 1 && input[i] !== ' ' && input[i + 1] !== ' ' && input[i + 1] !== 'ا'  &&input[i + 1] !== 'ی'  &&input[i + 1] !== 'و'  &&input[i - 1] !== 'ز') {
         result += 'ز';
       }
     }
@@ -38,7 +41,7 @@ function App() {
         value={input}
         onChange={handleChange}
         placeholder="متن خود را وارد کنید"
-        style={{ padding: '10px', width: '350px', marginBottom: '20px' }}
+        style={{ padding: '10px', width: '350px', marginBottom: '20px', }}
       />
       <button onClick={handleTranslate} style={{ padding: '10px' , width: '100%'}}>
         ترجمه کن
